@@ -1,0 +1,57 @@
+{
+  "name": "jquery-croco-appcore-js",
+  "version": "0.0.1",
+  "main": "dist/index.ts",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimaserd/Jquery-Croco-AppCore-Js.git"
+  },
+  "keywords": [
+    "csharp",
+    "system",
+    "js"
+  ],
+  "author": "Dmitry Serdukov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dimaserd/Jquery-Croco-AppCore-Js/issues"
+  },
+  "homepage": "https://github.com/dimaserd/Jquery-Croco-AppCore-Js#readme",
+  "engines": {
+    "node": "8.9.3"
+  },
+  "scripts": {
+    "rimraf": "npx rimraf",
+    "cpy": "npx cpy",
+    "build": "tsc",
+    "clean": "npm run clean:build && npm run clean:tests",
+    "copy:assets": "npm run cpy -- CHANGELOG.md dist && npm run cpy -- package.json dist",
+    "conventional-changelog": "conventional-changelog",
+    "changelog": "npm run conventional-changelog -- -i CHANGELOG.md -s",
+    "changelog:add": "git add --force CHANGELOG.md package.json",
+    "changelog:commit": "git commit -m \"Updated CHANGELOG.md\"",
+    "test": "echo",
+    "version": "npx conventional-changelog -i CHANGELOG.md -s -r && npm run build && npm run copy:assets",
+    "postversion": "npm run changelog:add && npm run changelog:commit && git push",
+    "release": "npx np --contents=dist --any-branch"
+  },
+  "devDependencies": {
+    "conventional-changelog-cli": "^2.0.25",
+    "cpy": "^7.3.0",
+    "cpy-cli": "^2.0.0",
+    "np": "^3.1.0",
+    "rimraf": "^3.0.0",
+    "ts-helpers": "^1.1.2",
+    "ts-loader": "^6.2.1",
+    "tslint": "^6.0.0-beta0",
+    "typescript": "^3.6.3",
+    "webpack": "^4.41.2"
+  },
+  "dependencies": {
+    "@types/jquery": "^3.3.31",
+    "@types/node": "^12.12.12",
+    "croco-appcore-js": "0.0.2",
+    "jquery": "^3.4.1"
+  }
+}
