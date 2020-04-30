@@ -52,6 +52,6 @@
     "@types/jquery": "^3.3.31",
     "@types/node": "^12.12.12",
     "croco-appcore-js": "0.0.2",
-    "jquery": "^3.4.1"
+    "jquery": "^3.5.0"
   }
 }
